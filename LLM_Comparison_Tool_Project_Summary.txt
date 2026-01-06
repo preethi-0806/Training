@@ -1,0 +1,110 @@
+
+LLM COMPARISON TOOL – DEVELOPMENT SUMMARY
+========================================
+
+Project Name:
+LLM Comparison Tool (Streamlit-based)
+
+Objective:
+To build a web application that compares responses from multiple Large Language Models (LLMs)
+such as OpenAI (ChatGPT), Google Gemini, and LLaMA side-by-side using a single prompt.
+
+--------------------------------------------------
+TECH STACK
+--------------------------------------------------
+- Python
+- Streamlit (UI)
+- OpenAI Python SDK
+- Concurrent Futures (ThreadPoolExecutor)
+- dotenv (.env for secrets)
+- Pandas (CSV report generation)
+
+--------------------------------------------------
+PROJECT STRUCTURE
+--------------------------------------------------
+model_comparision/
+│
+├── app.py
+├── .env
+│
+├── models/
+│   ├── __init__.py
+│   ├── openai_model.py
+│   ├── geminiai_model.py
+│   ├── llamaai_model.py
+│
+├── utils/
+│   ├── __init__.py
+│   ├── parallel.py
+│   ├── report.py
+│
+└── env/   (virtual environment)
+
+--------------------------------------------------
+KEY IMPLEMENTATION DETAILS
+--------------------------------------------------
+
+1. Streamlit UI:
+- Prompt input box
+- Compare button
+- Side-by-side model responses
+- CSV report generation and download
+- Custom CSS for modern UI
+
+2. Parallel Execution:
+- Used ThreadPoolExecutor to call multiple LLMs simultaneously
+- Improved performance and scalability
+
+3. OpenAI Integration:
+- Implemented using OpenAI Python SDK
+- Function: openai_response(prompt)
+- API key loaded from .env
+
+4. Encountered Issue (Important):
+- OpenAI API returns 403 (model_not_found) for all models
+- Reason: OpenAI now requires billing to be enabled for ALL API usage
+- This is an account-level policy, not a code issue
+
+5. Final Decision:
+- OpenAI support kept in code (ready for future use)
+- Application can run in MOCK MODE for OpenAI without billing
+- Gemini / LLaMA recommended for free real inference
+
+--------------------------------------------------
+MOCK MODE STRATEGY
+--------------------------------------------------
+When OpenAI billing is not enabled:
+- openai_response() returns a simulated response
+- Allows UI, parallel execution, and reports to work
+- Can switch to real OpenAI API later by enabling billing
+
+--------------------------------------------------
+LEARNING OUTCOMES
+--------------------------------------------------
+- Python package structuring
+- Debugging import/module errors
+- Environment & virtualenv handling
+- API integration best practices
+- Understanding real-world API access policies
+- Building production-style ML tools
+
+--------------------------------------------------
+PROJECT STATUS
+--------------------------------------------------
+- Architecture: COMPLETE
+- UI: COMPLETE
+- Parallel execution: COMPLETE
+- OpenAI: READY (billing required)
+- Gemini / LLaMA: CAN BE INTEGRATED FREE
+
+--------------------------------------------------
+NOTE
+--------------------------------------------------
+This project is portfolio-ready and demonstrates strong practical AIML skills.
+OpenAI billing limitation is a policy constraint, not a technical flaw.
+
+Author:
+Saiteja (AIML Student)
+
+Date:
+03/01/2026
