@@ -1,0 +1,102 @@
+PROJECT PURPOSE
+
+The main purpose of this project is:
+
+To demonstrate backend web development using Flask
+
+To integrate third-party APIs
+
+To implement user authentication
+
+To connect a web application with a MySQL database
+
+To manage sensitive data securely using environment variables
+
+TECHNOLOGIES USED
+
+>Backend: Python, Flask
+
+>Frontend: HTML, CSS, JavaScript
+
+>Database: MySQL
+
+>API: API Ninjas (Quotes API)
+
+>Environment Management: Python Virtual Environment
+
+>Configuration: dotenv (.env file)
+
+PROJECT FOLDER STRUCTURE EXPLANATION
+
+env / env_AI
+These are Python virtual environment folders used to isolate project dependencies and avoid conflicts with system-wide Python packages.
+
+templates/
+This folder contains all HTML files rendered by Flask:
+
+home.html – Landing page of the application
+
+ai_quote.html – Displays AI-generated quotes with author and category
+
+login.html – User login interface
+
+registration.html – User registration interface
+
+.env
+Stores sensitive information such as:
+
+API keys
+
+Database credentials
+
+Flask secret key
+
+app.py
+The main application file that:
+
+Initializes the Flask app
+
+Connects to the MySQL database
+
+Fetches quotes using an external API
+
+Handles routing for home, login, registration, and logout
+
+Processes form data for user authentication
+
+requirements.txt
+Contains a list of Python libraries required to run the project, making installation easy and consistent.
+
+style.css
+Handles the visual design and layout of the web pages.
+
+script.js
+Adds client-side interactivity and dynamic behavior to the application.
+
+.gitignore
+Ensures that unnecessary files such as virtual environments and secret configuration files are not uploaded to GitHub.
+
+KEY FUNCTIONALITIES
+
+User Registration
+Allows new users to create an account by providing a username, email, and password.
+
+User Login
+Authenticates users by verifying credentials stored in the MySQL database.
+
+AI Quote Generation
+Fetches random quotes from an external API and displays them dynamically.
+
+Secure Configuration
+Uses environment variables to protect sensitive data.
+
+Template Rendering
+Flask renders dynamic HTML pages using Jinja templates.
+
+SECURITY CONSIDERATIONS
+
+Sensitive information is stored in .env files
+
+Database credentials are not hard-coded
+
+.gitignore prevents exposure of secret files
